@@ -8,7 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait
 
 abstract class Page (private val driver: WebDriver) {
     private lateinit var wait : WebDriverWait
-    private val mainUrl = "https://www.saucedemo.com/"
+
+    companion object{
+        const val mainUrl = "https://www.saucedemo.com/"
+    }
 
     fun goToIndex() {
         driver.get(mainUrl)
