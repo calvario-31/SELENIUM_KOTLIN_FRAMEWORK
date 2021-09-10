@@ -20,7 +20,7 @@ abstract class Page(private val driver: WebDriver) {
         return driver.findElement(locator)
     }
 
-    fun waitVisibility(locator: By, timeOut: Long = defaultTimeOut): WebElement? {
+    fun waitVisibility(locator: By, timeOut: Long = defaultTimeOut): WebElement {
         val wait = WebDriverWait(driver, timeOut)
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator))
     }

@@ -31,7 +31,7 @@ class TopMenuPage(driver: WebDriver) : Page(driver) {
     fun logout() {
         openBurgerMenu()
         Log.info("Clicking on the button logout")
-        waitVisibility(buttonLogout)?.click()
+        waitVisibility(buttonLogout).click()
     }
 
     @Step("Getting the item count from the UI")
