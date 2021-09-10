@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver
 import pageobjects.Page
 import utilities.Log
 
-class ShoppingPage(driver: WebDriver): Page(driver) {
+class ShoppingPage(driver: WebDriver) : Page(driver) {
     private val title = By.className("title")
 
     @Step("Verifying the title is displayed")
@@ -16,10 +16,10 @@ class ShoppingPage(driver: WebDriver): Page(driver) {
     }
 
     @Step("Going to item details of {0}")
-    fun goToDetail(productName: String?) {
+    fun goToDetail(productName: String) {
         waitPageToLoad()
         val xpathGeneric = "//div[text()='PRODUCT_NAME']"
-        val xpathItemName = xpathGeneric.replace("PRODUCT_NAME", productName!!)
+        val xpathItemName = xpathGeneric.replace("PRODUCT_NAME", productName)
         Log.debug("Xpath of the item name: $xpathItemName")
         val itemName = By.xpath(xpathItemName)
         Log.info("Clicking on the name to go to the item detail")
@@ -27,6 +27,6 @@ class ShoppingPage(driver: WebDriver): Page(driver) {
     }
 
     override fun waitPageToLoad() {
-        waitFor(title)
+        waitVisibility(title)
     }
 }

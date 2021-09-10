@@ -6,18 +6,20 @@ import models.ShoppingItemModel
 import java.io.File
 
 class DataReader {
-    private val excelPath = "src/test/resources/data/testData.xlsx"
-    val sauceLabsUrl = "https://saucelabs.com/"
+    companion object {
+        const val excelPath = "src/test/resources/data/testData.xlsx";
+        const val sauceLabsUrl = "https://saucelabs.com/"
+    }
 
     fun getLockedOutCredentials(): CredentialsModel {
         return Poiji.fromExcel(File(excelPath), CredentialsModel::class.java)[1]
     }
 
-    fun getValidCredentials() : CredentialsModel {
+    fun getValidCredentials(): CredentialsModel {
         return Poiji.fromExcel(File(excelPath), CredentialsModel::class.java)[0]
     }
 
-    fun getItemList() : List<ShoppingItemModel> {
+    fun getItemList(): List<ShoppingItemModel> {
         return Poiji.fromExcel(File(excelPath), ShoppingItemModel::class.java)
     }
 }

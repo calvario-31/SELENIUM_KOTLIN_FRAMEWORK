@@ -27,6 +27,6 @@ class OverviewCheckoutPage(driver: WebDriver) : Page(driver) {
     }
 
     override fun waitPageToLoad() {
-        waitFor(title)
+        waitVisibility(title)
     }
 }

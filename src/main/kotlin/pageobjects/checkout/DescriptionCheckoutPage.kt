@@ -18,6 +18,6 @@ class DescriptionCheckoutPage(driver: WebDriver) : Page(driver) {
     }
 
     override fun waitPageToLoad() {
-        waitFor(labelDescription)
+        waitVisibility(labelDescription)
     }
 }

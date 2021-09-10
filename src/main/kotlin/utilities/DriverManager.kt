@@ -13,7 +13,7 @@ import java.net.URL
 class DriverManager {
     private lateinit var driver: WebDriver
 
-    fun buildDriver() : WebDriver{
+    fun buildDriver(): WebDriver {
         driver = if (runOnServer) {
             Log.info("Building remote driver")
             buildRemoteDriver()
@@ -53,7 +53,10 @@ class DriverManager {
         desiredCapabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier)
         desiredCapabilities.setCapability("build", buildName)
         desiredCapabilities.setCapability("browserstack.debug", "true") // for enabling visual logs
-        desiredCapabilities.setCapability("browserstack.console", "info") // to enable console logs at the info level. You can also use other log levels here
+        desiredCapabilities.setCapability(
+            "browserstack.console",
+            "info"
+        ) // to enable console logs at the info level. You can also use other log levels here
         desiredCapabilities.setCapability("browserstack.networkLogs", "true") // to enable network logs to be logged
         return RemoteWebDriver(URL(browserStackUrl), desiredCapabilities)
     }

@@ -43,11 +43,10 @@ class AboutTest : Base() {
 
     @DataProvider(name = "test data")
     fun methodSource(): MutableIterator<Array<Any>> {
-        val dataReader = DataReader()
         val testData: ArrayList<Array<Any>> = arrayListOf(
             arrayOf(
-                dataReader.getValidCredentials(),
-                dataReader.sauceLabsUrl
+                DataReader().getValidCredentials(),
+                DataReader.sauceLabsUrl
             )
         )
 

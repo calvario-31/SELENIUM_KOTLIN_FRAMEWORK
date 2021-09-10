@@ -7,7 +7,7 @@ import utilities.listeners.TestListeners
 
 @Listeners(SuiteListeners::class, TestListeners::class)
 abstract class Base {
-    lateinit var driver : WebDriver
+    lateinit var driver: WebDriver
 
     fun setup() {
         driver = DriverManager().buildDriver()

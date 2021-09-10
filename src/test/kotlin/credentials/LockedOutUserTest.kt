@@ -28,10 +28,14 @@ class LockedOutUserTest : Base() {
     fun lockedOutTest(credentials: CredentialsModel, errorMessage: String) {
         mainPage.goToIndex()
         mainPage.fillForm(credentials.username, credentials.password)
-        Assert.assertTrue(mainPage.errorMessageIsDisplayed(),
-            "Error message never appeared")
-        Assert.assertEquals(mainPage.getErrorMessage(), errorMessage,
-            "Error message text was not the expected")
+        Assert.assertTrue(
+            mainPage.errorMessageIsDisplayed(),
+            "Error message never appeared"
+        )
+        Assert.assertEquals(
+            mainPage.getErrorMessage(), errorMessage,
+            "Error message text was not the expected"
+        )
     }
 
     @AfterMethod(alwaysRun = true, description = "teardown")
@@ -39,7 +43,7 @@ class LockedOutUserTest : Base() {
         teardown()
     }
 
-    @DataProvider(name="dp locked out user")
+    @DataProvider(name = "dp locked out user")
     fun methodSource(): MutableIterator<Array<Any>> {
         val testData: ArrayList<Array<Any>> = arrayListOf(
             arrayOf(

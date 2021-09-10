@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver
 import pageobjects.Page
 import utilities.Log
 
-class InformationCheckoutPage(driver: WebDriver): Page(driver) {
+class InformationCheckoutPage(driver: WebDriver) : Page(driver) {
     private val inputFirstname = By.id("first-name")
     private val inputLastname = By.id("last-name")
     private val inputZipcode = By.id("postal-code")
@@ -30,6 +30,6 @@ class InformationCheckoutPage(driver: WebDriver): Page(driver) {
     }
 
     override fun waitPageToLoad() {
-        waitFor(title)
+        waitVisibility(title)
     }
 }

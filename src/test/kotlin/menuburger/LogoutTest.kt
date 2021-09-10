@@ -14,9 +14,9 @@ import utilities.Base
 import utilities.datareader.DataReader
 
 class LogoutTest : Base() {
-    lateinit var mainPage: MainPage
-    lateinit var shoppingPage: ShoppingPage
-    lateinit var topMenuPage: TopMenuPage
+    private lateinit var mainPage: MainPage
+    private lateinit var shoppingPage: ShoppingPage
+    private lateinit var topMenuPage: TopMenuPage
 
     @BeforeMethod(alwaysRun = true, description = "setup")
     fun setUp() {

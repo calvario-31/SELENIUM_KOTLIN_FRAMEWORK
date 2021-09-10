@@ -12,7 +12,7 @@ import pageobjects.credentials.MainPage
 import utilities.Base
 
 class DummyFailTest : Base() {
-    lateinit var mainPage: MainPage
+    private lateinit var mainPage: MainPage
 
     @BeforeMethod(alwaysRun = true, description = "true")
     fun setUp() {
@@ -26,8 +26,10 @@ class DummyFailTest : Base() {
     @TmsLink("2QtPrEKU")
     fun dummyFailTest() {
         mainPage.goToIndex()
-        Assert.assertTrue(mainPage.errorMessageIsDisplayed(),
-            "Error message never appeared")
+        Assert.assertTrue(
+            mainPage.errorMessageIsDisplayed(),
+            "Error message never appeared"
+        )
     }
 
     @AfterMethod(alwaysRun = true, description = "teardown")

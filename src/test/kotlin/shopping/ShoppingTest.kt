@@ -21,14 +21,14 @@ import utilities.Base
 import utilities.datareader.DataReader
 
 class ShoppingTest : Base() {
-    lateinit var mainPage: MainPage
-    lateinit var shoppingPage: ShoppingPage
-    lateinit var detailItemPage: DetailItemPage
-    lateinit var descriptionCheckoutPage: DescriptionCheckoutPage
-    lateinit var informationCheckoutPage: InformationCheckoutPage
-    lateinit var overviewCheckoutPage: OverviewCheckoutPage
-    lateinit var successShoppingPage: SuccessShoppingPage
-    lateinit var topMenuPage: TopMenuPage
+    private lateinit var mainPage: MainPage
+    private lateinit var shoppingPage: ShoppingPage
+    private lateinit var detailItemPage: DetailItemPage
+    private lateinit var descriptionCheckoutPage: DescriptionCheckoutPage
+    private lateinit var informationCheckoutPage: InformationCheckoutPage
+    private lateinit var overviewCheckoutPage: OverviewCheckoutPage
+    private lateinit var successShoppingPage: SuccessShoppingPage
+    private lateinit var topMenuPage: TopMenuPage
 
     @BeforeMethod(alwaysRun = true, description = "setup")
     fun setUp() {

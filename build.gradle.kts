@@ -13,7 +13,6 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     implementation("org.seleniumhq.selenium:selenium-java:3.141.59")
     // https://mvnrepository.com/artifact/org.testng/testng
@@ -47,7 +46,7 @@ tasks.test {
     }
 
     testLogging {
-        events ("PASSED", "FAILED", "SKIPPED")
+        events("PASSED", "FAILED", "SKIPPED")
         showStandardStreams = true
     }
 }

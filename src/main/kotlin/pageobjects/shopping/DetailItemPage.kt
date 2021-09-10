@@ -26,6 +26,6 @@ class DetailItemPage(driver: WebDriver) : Page(driver) {
     }
 
     override fun waitPageToLoad() {
-        waitFor(backToProducts)
+        waitVisibility(backToProducts)
     }
 }

@@ -7,8 +7,10 @@ import com.poiji.annotation.ExcelSheet
 class ShoppingItemModel {
     @ExcelCellName("itemName")
     lateinit var itemName: String
+
     @ExcelCellName("itemId")
     lateinit var itemId: String
+
     @ExcelCellName("price")
     lateinit var price: String
 }

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver
 import pageobjects.Page
 import utilities.Log
 
-class MainPage (driver: WebDriver) : Page(driver) {
+class MainPage(driver: WebDriver) : Page(driver) {
     private val usernameInput = By.id("user-name")
     private val passwordInput = By.id("password")
     private val loginButton = By.id("login-button")
@@ -15,7 +15,7 @@ class MainPage (driver: WebDriver) : Page(driver) {
     private val imageBot = By.className("bot_column")
 
     @Step("Filling the form with username: {0} and password: {1}")
-    fun fillForm(username : String, password : String) {
+    fun fillForm(username: String, password: String) {
         Log.info("Filling username")
         Log.debug("Username: $username")
         find(usernameInput).sendKeys(username)
@@ -27,23 +27,23 @@ class MainPage (driver: WebDriver) : Page(driver) {
     }
 
     @Step("Verifying error message is displayed")
-    fun errorMessageIsDisplayed() : Boolean{
+    fun errorMessageIsDisplayed(): Boolean {
         Log.info("Verifying error message is displayed")
         return elementIsDisplayed(errorMessage)
     }
 
     @Step("Getting error message")
-    fun getErrorMessage() : String {
+    fun getErrorMessage(): String {
         Log.info("Getting the error message as text")
         return find(errorMessage).text
     }
 
     @Step("Verify main page is displayed")
-    fun botImageIsDisplayed() : Boolean {
+    fun botImageIsDisplayed(): Boolean {
         return elementIsDisplayed(imageBot)
     }
 
     override fun waitPageToLoad() {
-        waitFor(loginContainer)
+        waitVisibility(loginContainer)
     }
 }
