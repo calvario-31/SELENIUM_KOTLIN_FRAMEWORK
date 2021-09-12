@@ -8,7 +8,7 @@ import utilities.Log
 
 class DetailItemPage(driver: WebDriver) : Page(driver) {
     private val itemPrice = By.className("inventory_details_price")
-    private val backToProducts = By.id("back-to-products")
+    private val backToProductsButton = By.id("back-to-products")
 
     @Step("Adding item to cart with id {idButton}")
     fun addToCart(idButton: String?): Double {
@@ -21,11 +21,11 @@ class DetailItemPage(driver: WebDriver) : Page(driver) {
         Log.info("Clicking on add to cart")
         find(buttonAddToCart).click()
         Log.info("Clicking on back to products")
-        find(backToProducts).click()
+        find(backToProductsButton).click()
         return price
     }
 
     override fun waitPageToLoad() {
-        waitVisibility(backToProducts)
+        waitVisibility(backToProductsButton)
     }
 }

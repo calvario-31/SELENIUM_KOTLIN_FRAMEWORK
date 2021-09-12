@@ -8,7 +8,7 @@ import utilities.Log
 
 class SuccessShoppingPage(driver: WebDriver) : Page(driver) {
     private val successTitle = By.className("complete-header")
-    private val buttonBackToHome = By.id("back-to-products")
+    private val backToHomeButton = By.id("back-to-products")
 
     @Step("Verifying the title is displayed")
     fun titleIsDisplayed(): Boolean {
@@ -19,7 +19,7 @@ class SuccessShoppingPage(driver: WebDriver) : Page(driver) {
     @Step("Clicking on back to home")
     fun backToHome() {
         Log.info("Clicking on back to home")
-        find(buttonBackToHome).click()
+        find(backToHomeButton).click()
     }
 
     override fun waitPageToLoad() {

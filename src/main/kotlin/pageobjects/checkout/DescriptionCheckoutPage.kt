@@ -7,17 +7,17 @@ import pageobjects.Page
 import utilities.Log
 
 class DescriptionCheckoutPage(driver: WebDriver) : Page(driver) {
-    private val buttonCheckout = By.id("checkout")
-    private val labelDescription = By.className("cart_desc_label")
+    private val checkoutButton = By.id("checkout")
+    private val descriptionLabel = By.className("cart_desc_label")
 
     @Step("Clicking on continue checkout")
     fun continueCheckout() {
         waitPageToLoad()
         Log.info("Clicking on the checkout button")
-        find(buttonCheckout).click()
+        find(checkoutButton).click()
     }
 
     override fun waitPageToLoad() {
-        waitVisibility(labelDescription)
+        waitVisibility(descriptionLabel)
     }
 }
