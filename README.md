@@ -1,13 +1,13 @@
 # SELENIUM_KOTLIN COMPLETE FRAMEWORK
 
-Url tested: 
+* Url tested: 
 
-    https://www.saucedemo.com/
+        https://www.saucedemo.com/
 
-To run:
+* To run:
 
-    gradle clean test -PsuiteName=${suiteName}
+        gradle clean test -PsuiteName=${suiteName}
 
-Example:
+* Example:
 
-    gradle clean test -PsuiteName=smoke
+        gradle clean test -PsuiteName=smoke
