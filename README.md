@@ -11,3 +11,7 @@
 * Example:
 
         gradle clean test -PsuiteName=smoke
+        
+* To see the results:
+
+        allure serve build/allure-results/
