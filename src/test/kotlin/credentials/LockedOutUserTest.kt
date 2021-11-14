@@ -27,6 +27,7 @@ class LockedOutUserTest : Base() {
     @Parameters("credentials", "error message")
     fun lockedOutTest(credentials: CredentialsModel, errorMessage: String) {
         mainPage.goToIndex()
+        mainPage.waitPageToLoad()
         mainPage.fillForm(credentials.username, credentials.password)
         Assert.assertTrue(
             mainPage.errorMessageIsDisplayed(),

@@ -12,7 +12,6 @@ class DescriptionCheckoutPage(driver: WebDriver) : Page(driver) {
 
     @Step("Clicking on continue checkout")
     fun continueCheckout() {
-        waitPageToLoad()
         Log.info("Clicking on the checkout button")
         find(checkoutButton).click()
     }

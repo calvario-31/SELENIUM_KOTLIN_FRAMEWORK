@@ -36,7 +36,6 @@ class TopMenuPage(driver: WebDriver) : Page(driver) {
 
     @Step("Getting the item count from the UI")
     fun getItemCount(): Int {
-        waitPageToLoad()
         Log.info("Getting item count text")
         val text = find(itemCountLabel).text
         Log.debug("Item count test: $text")
@@ -45,13 +44,11 @@ class TopMenuPage(driver: WebDriver) : Page(driver) {
 
     @Step("Clicking on checkout")
     fun goToCheckout() {
-        waitPageToLoad()
         Log.info("Clicking on the checkout button")
         find(checkoutButton).click()
     }
 
     private fun openBurgerMenu() {
-        waitPageToLoad()
         Log.info("Clicking on the menu burger")
         find(burgerMenuButton).click()
     }

@@ -31,6 +31,7 @@ class LogoutTest : Base() {
     @TmsLink("ksBWkBLx")
     fun logoutTest(credentials: CredentialsModel) {
         mainPage.goToIndex()
+        mainPage.waitPageToLoad()
         mainPage.fillForm(credentials.username, credentials.password)
 
         Assert.assertTrue(

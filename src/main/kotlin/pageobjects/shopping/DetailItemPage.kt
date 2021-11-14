@@ -12,11 +12,10 @@ class DetailItemPage(driver: WebDriver) : Page(driver) {
 
     @Step("Adding item to cart with id {idButton}")
     fun addToCart(idButton: String): Double {
-        waitPageToLoad()
         Log.info("Getting the price text from UI")
         val text = find(itemPrice).text
         val price = text.substring(1).toDouble()
-        Log.debug("Price: $price")
+        Log.info("Price: $price")
         val buttonAddToCart = By.id(idButton)
         Log.info("Clicking on add to cart")
         find(buttonAddToCart).click()

@@ -13,10 +13,9 @@ class OverviewCheckoutPage(driver: WebDriver) : Page(driver) {
 
     @Step("Getting the total price from the UI")
     fun getTotalPrice(): Double {
-        waitPageToLoad()
         Log.info("Getting the total price from the UI")
         val text = find(priceLabel).text
-        Log.debug("Total price: " + text.substring(13))
+        Log.info("Total price: " + text.substring(13))
         return text.substring(13).toDouble()
     }
 

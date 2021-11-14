@@ -15,15 +15,11 @@ class InformationCheckoutPage(driver: WebDriver) : Page(driver) {
 
     @Step("Filling the form with {0}, {1}, {2}")
     fun fillForm(firstname: String, lastname: String, zipcode: String) {
-        waitPageToLoad()
-        Log.info("Filling the username")
-        Log.debug("Firstname: $firstname")
+        Log.info("Filling the username: $firstname")
         find(firstnameInput).sendKeys(firstname)
-        Log.info("Filling the lastname")
-        Log.debug("Lastname: $lastname")
+        Log.info("Filling the lastname: $lastname")
         find(lastnameInput).sendKeys(lastname)
-        Log.info("Filling the zipcode")
-        Log.debug("Zipcode: $zipcode")
+        Log.info("Filling the zipcode: $zipcode")
         find(zipcodeInput).sendKeys(zipcode)
         Log.info("Clicking on continue")
         find(continueButton).click()

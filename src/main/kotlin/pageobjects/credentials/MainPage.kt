@@ -16,11 +16,9 @@ class MainPage(driver: WebDriver) : Page(driver) {
 
     @Step("Filling the form with username: {0} and password: {1}")
     fun fillForm(username: String, password: String) {
-        Log.info("Filling username")
-        Log.debug("Username: $username")
+        Log.info("Filling username: $username")
         find(usernameInput).sendKeys(username)
-        Log.info("Filling password")
-        Log.debug("Password: $password")
+        Log.info("Filling password: $password")
         find(passwordInput).sendKeys(password)
         Log.info("Clicking on login button")
         find(loginButton).click()

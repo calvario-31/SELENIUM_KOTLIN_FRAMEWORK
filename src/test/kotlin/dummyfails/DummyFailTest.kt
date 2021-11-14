@@ -26,6 +26,7 @@ class DummyFailTest : Base() {
     @TmsLink("2QtPrEKU")
     fun dummyFailTest() {
         mainPage.goToIndex()
+        mainPage.waitPageToLoad()
         Assert.assertTrue(
             mainPage.errorMessageIsDisplayed(),
             "Error message never appeared"

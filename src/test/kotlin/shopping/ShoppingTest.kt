@@ -43,12 +43,15 @@ class ShoppingTest : Base() {
     @TmsLink("2E5cHwYs")
     fun shoppingTest(credentials: CredentialsModel, itemList: List<ShoppingItemModel>, userData: UserDataModel) {
         mainPage.goToIndex()
+        mainPage.waitPageToLoad()
         mainPage.fillForm(credentials.username, credentials.password)
+        shoppingPage.waitPageToLoad()
 
         var sum = 0.0
         var currentPrice: Double
         for (item in itemList) {
             shoppingPage.goToDetail(item.itemName)
+            detailItemPage.waitPageToLoad()
             currentPrice = detailItemPage.addToCart(item.itemId)
 
             Assert.assertEquals(
@@ -59,6 +62,7 @@ class ShoppingTest : Base() {
 
             sum += currentPrice
         }
+        topMenuPage.waitPageToLoad()
 
         Assert.assertEquals(
             topMenuPage.getItemCount(),
@@ -68,9 +72,13 @@ class ShoppingTest : Base() {
 
         topMenuPage.goToCheckout()
 
+        descriptionCheckoutPage.waitPageToLoad()
         descriptionCheckoutPage.continueCheckout()
+
+        informationCheckoutPage.waitPageToLoad()
         informationCheckoutPage.fillForm(userData.firstname, userData.lastname, userData.zipcode)
 
+        overviewCheckoutPage.waitPageToLoad()
         Assert.assertEquals(
             overviewCheckoutPage.getTotalPrice(),
             sum,
@@ -79,6 +87,7 @@ class ShoppingTest : Base() {
 
         overviewCheckoutPage.finishCheckout()
 
+        successShoppingPage.waitPageToLoad()
         Assert.assertTrue(
             successShoppingPage.titleIsDisplayed(),
             "Success title was not displayed"
@@ -86,6 +95,7 @@ class ShoppingTest : Base() {
 
         successShoppingPage.backToHome()
 
+        shoppingPage.waitPageToLoad()
         Assert.assertTrue(
             shoppingPage.titleIsDisplayed(),
             "Shopping title was not displayed"

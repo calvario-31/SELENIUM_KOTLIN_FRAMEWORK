@@ -17,7 +17,6 @@ class ShoppingPage(driver: WebDriver) : Page(driver) {
 
     @Step("Going to item details of {0}")
     fun goToDetail(productName: String) {
-        waitPageToLoad()
         val xpathGeneric = "//div[text()='PRODUCT_NAME']"
         val xpathItemName = xpathGeneric.replace("PRODUCT_NAME", productName)
         Log.debug("Xpath of the item name: $xpathItemName")

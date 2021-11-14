@@ -29,6 +29,7 @@ class AboutTest : Base() {
     @TmsLink("moriaEyr")
     fun aboutTest(credentials: CredentialsModel, sauceLabsUrl: String) {
         mainPage.goToIndex()
+        mainPage.waitPageToLoad()
         mainPage.fillForm(credentials.username, credentials.password)
         Assert.assertEquals(
             topMenuPage.getHrefFromAbout(), sauceLabsUrl,
