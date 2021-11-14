@@ -5,7 +5,8 @@ import io.qameta.allure.Severity
 import io.qameta.allure.SeverityLevel
 import io.qameta.allure.TmsLink
 import models.CredentialsModel
-import org.testng.Assert
+import org.testng.Assert.assertEquals
+import org.testng.Assert.assertTrue
 import org.testng.annotations.*
 import pageobjects.credentials.MainPage
 import utilities.Base
@@ -29,14 +30,10 @@ class LockedOutUserTest : Base() {
         mainPage.goToIndex()
         mainPage.waitPageToLoad()
         mainPage.fillForm(credentials.username, credentials.password)
-        Assert.assertTrue(
-            mainPage.errorMessageIsDisplayed(),
-            "Error message never appeared"
-        )
-        Assert.assertEquals(
-            mainPage.getErrorMessage(), errorMessage,
-            "Error message text was not the expected"
-        )
+
+        assertTrue(mainPage.errorMessageIsDisplayed(), "Error message never appeared")
+
+        assertEquals(mainPage.getErrorMessage(), errorMessage, "Error message text was not the expected")
     }
 
     @AfterMethod(alwaysRun = true, description = "teardown")

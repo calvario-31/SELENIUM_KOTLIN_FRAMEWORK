@@ -27,10 +27,7 @@ class DummyFailTest : Base() {
     fun dummyFailTest() {
         mainPage.goToIndex()
         mainPage.waitPageToLoad()
-        Assert.assertTrue(
-            mainPage.errorMessageIsDisplayed(),
-            "Error message never appeared"
-        )
+        Assert.assertTrue(mainPage.errorMessageIsDisplayed(), "Error message never appeared")
     }
 
     @AfterMethod(alwaysRun = true, description = "teardown")
