@@ -1,9 +1,17 @@
 # SELENIUM_KOTLIN COMPLETE FRAMEWORK
 
-To run:
+* Url tested: 
 
-    gradle clean test -PsuiteName=${suiteName}
+        https://www.saucedemo.com/
 
-Example:
+* To run:
 
-    gradle clean test -PsuiteName=smoke
+        gradle clean test -PsuiteName=${suiteName}
+
+* Example:
+
+        gradle clean test -PsuiteName=smoke
+        
+* To see the results:
+
+        allure serve build/allure-results/
