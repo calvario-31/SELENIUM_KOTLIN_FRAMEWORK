@@ -6,11 +6,11 @@
 
 * To run:
 
-        gradle clean test -PsuiteName=${suiteName}
+        ./gradle clean test -PsuiteName=${suiteName}
 
 * Example:
 
-        gradle clean test -PsuiteName=smoke
+        ./gradle clean test -PsuiteName=smoke
         
 * To see the results:
 
